@@ -1,0 +1,17 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    </head>
+<body>
+<div class="container">
+<h1 class="display-3"> {{ region.region_candidato }}</h1>
+<ul class="list-group">
+{% for can in region.candidato_set.all %}
+    <li class="list-group-item">{{ can.info_candidato }} -- {{ can.votos }} voto {{  can.votos|pluralize  }}</li>
+{% endfor %}
+</ul>
+ <ul class="list-group">
+ <li class="list-group-item"><a href="{% url 'elecciones:resultados' region.id %}"> Votar</a></li>
+ <li class="list-group-item"><a href="{% url 'elecciones:index' %}">Ver regiones</a></li>
+ </ul>
+</div>
+</body>

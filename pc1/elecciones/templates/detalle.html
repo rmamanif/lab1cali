@@ -1,0 +1,11 @@
+<h1> {{ region.region_candidato }}</h1>
+<ul>
+{% for candidato in region.opcion_set.all %}
+    <li>{{ candidato.info_candidato }} -- {{ candidato.votos }} voto {{  candidato.votos|pluralize  }}</li>
+{% endfor %}
+</ul>
+
+<!-- <a href="{% url 'elecciones:detalle' pregunta.id %}"> Votar de nuevo?</a>
+<a href="{% url 'elecciones:index' %}">Ver preguntas</a>
+
+ -->

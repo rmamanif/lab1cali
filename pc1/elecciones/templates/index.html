@@ -1,0 +1,13 @@
+<h1>Regiones en temporada de elección</h1>
+
+{% if latest_question_list %}
+    <ul>
+    {% for region in latest_question_list %}
+      <li>
+        <a href="/elecciones/{{ region.id }}/">{{ region.region_candidato }} </a>
+      </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay regiones con elecciones en progreso</p>
+{% endif %}
